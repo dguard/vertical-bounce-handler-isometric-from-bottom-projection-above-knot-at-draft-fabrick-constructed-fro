@@ -1,0 +1,60 @@
+<html>
+<head>
+    <style>
+        .statement-area {
+
+        }
+        .statement-at-front #scene {
+            width: 100vw;
+            height: 100vh;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="statement-area">
+        <div class="statement-at-front">
+            <div class="isometric">
+                <div class="from-bottom-projection">
+                    <canvas id="scene"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="core-lib/draft-compact.js"></script>
+    <script>
+        let canvas = document.querySelector('.statement-area').querySelector('.statement-at-front').querySelector('#scene')
+
+        let ctx = canvas.getContext('2d')
+        canvas.width = canvas.clientWidth
+        canvas.height = canvas.clientHeight
+
+        if(window.devicePixelRatio > 1) {
+            canvas.width = canvas.clientWidth * 2
+            canvas.height = canvas.clientHeight * 2
+
+            ctx.scale(2, 2)
+        }
+
+        // use #sticked-album-in-queued-sequence
+        // use compact
+        width = canvas.width
+        height = canvas.height
+
+        let FIELD_OF_VIEW = width * 0.8
+        let PROJECTION_CENTER_Y = height * 0.5
+        let PROJECTION_CENTER_X = width * 0.5
+
+        // use #vertical-bounce-handler-in-relative-size
+        let draftFabrikk = new DraftFabrikk()
+
+        // use #sticked-album-in-queued-sequence
+        // follow #vertical-bounce-handler-isometric-from-bottom-projection-above-knot-at-draft-fabric-constructed
+
+    </script>
+
+</body>
+
+</html>
