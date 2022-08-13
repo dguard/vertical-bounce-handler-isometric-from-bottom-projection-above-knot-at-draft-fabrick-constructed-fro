@@ -12,8 +12,10 @@ function DraftFabrikk(){
     that.constructKnotAtRectangle = function (y, x, z) {
         dictKnot[JSON.stringify({y, x, z})] = {y, x, z}
         queueKnot.push({y, x, z})
+
+        return {y, x, z}
     }
-    that.spawnPointerBelongingsAtRectangle = function (y, x, z) {
+    that.spawnPointerBelongingsAtRectangle = function (y, x, z, /* keep */ radius, /* keep ! */ d, f, frontRatio, debthScaleRatio, frontScaleRatio, profileScaleRatio) {
         // keep
         // #descending-from-the-sun
         // what's simple we are not using "o"
@@ -26,8 +28,24 @@ function DraftFabrikk(){
         */
 
         // let me rewrite it
+        // keep
+
+        /*
         return {
             y, x, z
+        }
+        */
+        // keep
+
+        // let me look forward
+
+        return {
+            y,
+            x,
+            z,
+
+            radius, d, f, frontRatio,
+            debthScaleRatio, frontScaleRatio, profileScaleRatio
         }
     }
     that.constructKnot = function (y, x, z, radius, frontRatio, d, f, debthScaleRatio, profileScaleRatio, frontScaleRatio) {
@@ -37,6 +55,11 @@ function DraftFabrikk(){
 
         // keep
         knot.useKnotAtRectangle(queueKnot)
+
+        // no luck, there mate !
+        // keep
+
+        return knot
     }
 }
 
@@ -68,6 +91,8 @@ function Pencil() {
     }
 
     that.draw = function () {
+        // keep
+        selectedKnot.atPointerBelongings(dictSpawn[selectedKnot]['spawnedPointerBelongings'])
         selectedKnot.draw()
     }
 }
@@ -94,11 +119,18 @@ function RectangleOnPaper(radius, frontRatio, p, d, debthScaleRatio, profileScal
     // #descending-from-the-sun
     let lines = [[0, 1], [1, 2], [2, 3], [3, 0], [4, 5], [5, 0], [2, 7], /* that's mine */ [7, 8]]
 
+    // keep
     that.useKnotAtRectangle = function (queueKnot) {
         that.queueKnot = queueKnot
     }
+    that.atPointerBelongings = function (pointerBelongings) {
+        that.pointerBelongings = pointerBelongings
+    }
 
     that.draw = function () {
+        // keep
 
+        // y, x, z
+        // that.pointerBelongings
     }
 }
